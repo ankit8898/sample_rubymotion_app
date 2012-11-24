@@ -23,6 +23,12 @@ class TapController < UIViewController
     label.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2)
     label
   end
+
+  def initWithNibName(name, bundle: bundle)
+    super
+    self.tabBarItem = UITabBarItem.alloc.initWithTabBarSystemItem(UITabBarSystemItemFavorites, tag: 1)
+    self
+  end
 end
 
 
