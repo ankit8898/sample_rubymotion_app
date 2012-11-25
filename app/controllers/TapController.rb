@@ -7,12 +7,12 @@ class TapController < UIViewController
     @label = for_label
     self.view.addSubview @label
     self.title = "Saturday (#{self.navigationController.viewControllers.count})"
-    rightButton = UIBarButtonItem.alloc.initWithTitle("Push", style: UIBarButtonItemStyleBordered, target: self, action:'push')
+    rightButton = UIBarButtonItem.alloc.initWithTitle("Goto Other", style: UIBarButtonItemStyleBordered, target: self, action:'push_to_other')
     self.navigationItem.rightBarButtonItem = rightButton
   end
 
-  def push
-    new_controller = TapController.alloc.initWithNibName(nil, bundle: nil)
+  def push_to_other
+    new_controller = OtherController.alloc.initWithNibName(nil, bundle: nil)
     self.navigationController.pushViewController(new_controller, animated: true)
   end
 

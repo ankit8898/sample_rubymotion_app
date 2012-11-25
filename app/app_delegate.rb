@@ -4,13 +4,13 @@
       @window.makeKeyAndVisible    
 
       controller = TapController.alloc.initWithNibName(nil, bundle: nil)
+      controller_other = OtherController.alloc.initWithNibName(nil, bundle: nil)
       nav_controller = UINavigationController.alloc.initWithRootViewController(controller)
-      other_controller = UIViewController.alloc.initWithNibName(nil, bundle: nil)
-      other_controller.title = "Other"
-      other_controller.view.backgroundColor = UIColor.purpleColor
+      nav_controller_o = UINavigationController.alloc.initWithRootViewController(controller_other)
+      other_controller = OtherController.alloc.initWithNibName(nil, bundle: nil)
 
       tab_controller = UITabBarController.alloc.initWithNibName(nil, bundle: nil)
-      tab_controller.viewControllers = [nav_controller, other_controller]
+      tab_controller.viewControllers = [nav_controller,nav_controller_o]
       @window.rootViewController = tab_controller
 
       true
